@@ -353,7 +353,7 @@ const App = () => {
       <footer className="py-20 px-6 border-t border-white/5 bg-black">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-serif uppercase tracking-widest mb-4">South Rift Springs</h3>
+            <h3 className="text-2xl font-serif uppercase tracking-widest mb-4">Elim Springs</h3>
             <p className="text-[10px] uppercase tracking-[0.3em] text-white/20">Noble Hotel Junction • Eldoret, Kenya</p>
           </div>
           
