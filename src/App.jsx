@@ -94,7 +94,7 @@ const App = () => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-serif tracking-widest uppercase leading-none">South Rift Springs</span>
+              <span className="text-lg font-serif tracking-widest uppercase leading-none">Elim Springs</span>
               <span className="text-[8px] tracking-[0.3em] uppercase text-[#C6A75E]">Hotel & Excellence</span>
             </div>
           </div>
@@ -131,7 +131,7 @@ const App = () => {
             <span className="italic text-[#C6A75E]">Refined Comfort.</span>
           </h1>
           <p className="text-lg text-white/60 mb-12 max-w-xl mx-auto font-light">
-            Located at the iconic Noble Hotel Junction, South Rift Springs Hotel is Eldoret's premier destination for artisanal Kenyan cuisine.
+            Located at the iconic Noble Hotel Junction, Elim Springs Hotel is Eldoret's premier destination for artisanal Kenyan cuisine.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button onClick={() => scrollTo('reserve')} className="bg-[#C6A75E] text-black px-10 py-5 rounded-full font-bold uppercase tracking-widest text-xs hover:scale-105 transition-all shadow-xl">
@@ -367,7 +367,7 @@ const App = () => {
           </div>
         </div>
         <div className="mt-20 text-center text-[9px] tracking-[0.8em] text-white/10 uppercase">
-          © 2026 South Rift Springs Hotel & Resort
+          © 2026 Elim Springs Hotel & Resort
         </div>
       </footer>
     </div>
