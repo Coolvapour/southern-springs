@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Utensils, 
   MapPin, 
@@ -6,18 +6,13 @@ import {
   Clock, 
   ChevronRight, 
   Star, 
-  Menu as MenuIcon, 
-  X,
+  Sparkles, 
+  Calendar, 
+  Users, 
+  Wine,
   Instagram,
   Facebook,
-  Award,
-  Volume2,
-  VolumeX,
-  Sparkles,
-  Calendar,
-  Users,
-  Coffee,
-  Wine
+  Award
 } from 'lucide-react';
 
 // --- Expanded Menu Data ---
@@ -56,7 +51,6 @@ const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState('mains');
   const [pairing, setPairing] = useState(null);
-  const [reservationDate, setReservationDate] = useState("");
   const [partySize, setPartySize] = useState("2");
   const [isBooking, setIsBooking] = useState(false);
   const [bookingSuccess, setBookingSuccess] = useState(false);
@@ -87,9 +81,17 @@ const App = () => {
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-black/90 backdrop-blur-md py-4 shadow-2xl' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-3 group cursor-pointer" onClick={() => scrollTo('hero')}>
-            <div className="w-10 h-10 border border-[#C6A75E] flex items-center justify-center rotate-45 group-hover:bg-[#C6A75E] transition-all duration-500">
-              <span className="-rotate-45 font-serif text-[#C6A75E] group-hover:text-black font-bold">SR</span>
+          <div className="flex items-center gap-4 group cursor-pointer" onClick={() => scrollTo('hero')}>
+            <div className="w-12 h-12 relative">
+              <img 
+                src="/logo.png" 
+                alt="South Rift Springs Logo" 
+                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = '<div class="w-10 h-10 border border-[#C6A75E] flex items-center justify-center rotate-45 group-hover:bg-[#C6A75E] transition-all duration-500"><span class="-rotate-45 font-serif text-[#C6A75E] group-hover:text-black font-bold text-xs">SR</span></div>';
+                }}
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-lg font-serif tracking-widest uppercase leading-none">South Rift Springs</span>
@@ -114,7 +116,7 @@ const App = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black z-10"></div>
           <img 
             src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&q=80" 
-            className="w-full h-full object-cover scale-105 animate-[pulse_10s_ease-in-out_infinite]"
+            className="w-full h-full object-cover scale-105"
             alt="South Rift Springs Gourmet"
           />
         </div>
@@ -186,7 +188,6 @@ const App = () => {
               </div>
             </div>
 
-            {/* Enhanced Sommelier Sidebar */}
             <div className="lg:col-span-4">
               <div className="sticky top-32 bg-[#0F2E2C]/20 border border-[#C6A75E]/20 p-8 rounded-sm overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#C6A75E]/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
@@ -197,11 +198,11 @@ const App = () => {
                 {pairing ? (
                   <div className="animate-in fade-in slide-in-from-right-4">
                     <p className="text-[10px] uppercase tracking-widest text-white/40 mb-2">Enhance your {pairing.name}:</p>
-                    <h5 className="text-3xl font-serif mb-6 text-[#C6A75E]">{pairing.pairing}</h5>
+                    <h5 className="text-3xl font-serif mb-6 text-[#C6A75E]">{pairing.pairing || "House Blend Coffee"}</h5>
                     <div className="space-y-4 mb-8">
                       <div className="flex gap-4 items-start">
                         <div className="w-1 h-1 bg-[#C6A75E] rounded-full mt-2"></div>
-                        <p className="text-xs text-white/60 leading-relaxed italic">"The flavor profile of {pairing.pairing} balances the aromatics of this dish perfectly."</p>
+                        <p className="text-xs text-white/60 leading-relaxed italic">"The flavor profile here balances the aromatics of this dish perfectly."</p>
                       </div>
                     </div>
                     <button onClick={() => scrollTo('reserve')} className="w-full py-4 border border-[#C6A75E] text-[#C6A75E] text-[10px] uppercase tracking-widest font-bold hover:bg-[#C6A75E] hover:text-black transition-all">
@@ -326,13 +327,12 @@ const App = () => {
                   </div>
                   <div>
                     <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#C6A75E] mb-2">Inquiries</h4>
-                    <p className="text-white/60 font-light leading-relaxed">+254 722 286 280</p>
+                    <p className="text-white/60 font-light leading-relaxed">+254 7XX XXX XXX</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Embedded Google Map */}
             <div className="lg:col-span-7 h-[450px] w-full border border-[#C6A75E]/20 p-2 bg-white/5 rounded-sm">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d703.1411845246081!2d35.29632609055586!3d0.5081798000000025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1781018dc81a20a9%3A0xa4085f0ef036da26!2sSOUTHRIFT%20JETLINK%20MOTORS!5e1!3m2!1sen!2ske!4v1772291528168!5m2!1sen!2ske" 
