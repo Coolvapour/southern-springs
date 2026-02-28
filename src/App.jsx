@@ -7,7 +7,6 @@ import {
   ChevronRight, 
   Star, 
   Sparkles, 
-  Calendar, 
   Users, 
   Wine,
   Instagram,
@@ -103,9 +102,10 @@ const App = () => {
             <button onClick={() => scrollTo('menu')} className="hover:text-[#C6A75E] transition-colors">Menu</button>
             <button onClick={() => scrollTo('reserve')} className="hover:text-[#C6A75E] transition-colors">Reservations</button>
             <button onClick={() => scrollTo('location')} className="hover:text-[#C6A75E] transition-colors">Find Us</button>
-            <button onClick={() => scrollTo('reserve')} className="bg-[#C6A75E] text-black px-6 py-2.5 rounded-full hover:bg-white transition-all shadow-lg shadow-[#C6A75E]/10">
-              Book Table
-            </button>
+            <a href="tel:+254722286280" className="bg-[#C6A75E] text-black px-6 py-2.5 rounded-full hover:bg-white transition-all shadow-lg shadow-[#C6A75E]/10 flex items-center gap-2">
+              <Phone size={12} />
+              Book Now
+            </a>
           </div>
         </div>
       </nav>
@@ -221,30 +221,6 @@ const App = () => {
         </div>
       </section>
 
-      {/* Experience Gallery */}
-      <section className="bg-black py-32 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-          <div className="relative group overflow-hidden h-[600px]">
-            <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&q=80" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Kenyan Chicken" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-12">
-              <div>
-                <h3 className="text-4xl font-serif mb-2 italic">The Springs Kuku</h3>
-                <p className="text-[10px] uppercase tracking-widest text-[#C6A75E]">Flame-Grilled & Farm-Fresh</p>
-              </div>
-            </div>
-          </div>
-          <div className="relative group overflow-hidden h-[600px] md:mt-24">
-            <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&q=80" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Traditional Fries" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-12">
-              <div>
-                <h3 className="text-4xl font-serif mb-2 italic">Golden Cuts</h3>
-                <p className="text-[10px] uppercase tracking-widest text-[#C6A75E]">Hand-sliced Highland Potatoes</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Reservation Section */}
       <section id="reserve" className="py-32 px-6 bg-[#0F2E2C]/5">
         <div className="max-w-5xl mx-auto bg-black border border-[#C6A75E]/20 overflow-hidden shadow-2xl">
@@ -321,15 +297,22 @@ const App = () => {
                     <p className="text-white/60 font-light leading-relaxed">South Rift Jetlink Motors, Noble Hotel Junction, Eldoret-Nakuru Hwy, Eldoret.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-6 group">
-                  <div className="w-12 h-12 rounded-full border border-[#C6A75E]/30 flex items-center justify-center group-hover:bg-[#C6A75E] transition-all">
-                    <Phone className="text-[#C6A75E] group-hover:text-black transition-colors" size={20} />
+                
+                {/* CALLABLE PHONE NUMBER SECTION */}
+                <a 
+                  href="tel:+254722286280" 
+                  className="flex items-start gap-6 group cursor-pointer hover:bg-white/5 p-4 -m-4 rounded-xl transition-all"
+                >
+                  <div className="w-12 h-12 rounded-full border border-[#C6A75E]/30 flex items-center justify-center group-hover:bg-[#C6A75E] transition-all group-hover:scale-110 relative">
+                    <Phone className="text-[#C6A75E] group-hover:text-black transition-colors animate-pulse" size={20} />
+                    <div className="absolute inset-0 rounded-full border border-[#C6A75E] opacity-0 group-hover:animate-ping"></div>
                   </div>
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#C6A75E] mb-2">Inquiries</h4>
-                    <p className="text-white/60 font-light leading-relaxed">+254 722 286 280</p>
+                    <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#C6A75E] mb-2">Direct Inquiries</h4>
+                    <p className="text-white/80 font-serif text-2xl group-hover:text-[#C6A75E] transition-colors leading-none">+254 722 286 280</p>
+                    <p className="text-[8px] uppercase tracking-widest text-white/30 mt-1">Tap to call our concierge</p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
