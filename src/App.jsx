@@ -326,7 +326,7 @@ const App = () => {
                   </div>
                   <div>
                     <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#C6A75E] mb-2">Inquiries</h4>
-                    <p className="text-white/60 font-light leading-relaxed">+254 7XX XXX XXX</p>
+                    <p className="text-white/60 font-light leading-relaxed">+254 722 286 280</p>
                   </div>
                 </div>
               </div>
