@@ -85,7 +85,7 @@ const App = () => {
             <div className="w-12 h-12 relative">
               <img 
                 src="/logo.png" 
-                alt="South Rift Springs Logo" 
+                alt="Elim Springs Springs Logo" 
                 className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
                 onError={(e) => {
                   e.target.style.display = 'none';
@@ -117,7 +117,7 @@ const App = () => {
           <img 
             src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&q=80" 
             className="w-full h-full object-cover scale-105"
-            alt="South Rift Springs Gourmet"
+            alt="Elim Springs Springs Gourmet"
           />
         </div>
 
@@ -253,7 +253,7 @@ const App = () => {
               <Award className="text-[#C6A75E] mb-8" size={40} />
               <h2 className="text-4xl font-serif mb-6 italic leading-tight">Secure Your <br />Springs Experience</h2>
               <p className="text-white/40 text-sm mb-8 leading-relaxed">
-                Join us at the heart of South Rift. We recommend booking 24 hours in advance for groups larger than four.
+                Join us at the heart of Elim Springs. We recommend booking 24 hours in advance for groups larger than four.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-4 text-[10px] uppercase tracking-widest font-bold">
